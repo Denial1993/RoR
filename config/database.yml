@@ -11,8 +11,10 @@ default: &default
 
 development:
   <<: *default
-#  adapter: sqlite3
-  database: PBDemoDev
+  adapter: sqlite3
+  database: db/sqlite3
+#  database: PBDemoDev
+  
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
