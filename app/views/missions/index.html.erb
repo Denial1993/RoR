@@ -1,2 +1,31 @@
 <h1>Missions#index</h1>
 <p>Find me in app/views/missions/index.html.erb</p>
+
+<h3><%= link_to "新增" , new_mission_path %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <td>任務名稱</td>
+      <td>任務內容</td>
+      <td>開始時間</td>
+      <td>結束時間</td>
+      <td>編輯</td>
+      <td>刪除</td>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @missions.each do |mission| %>
+    <tr>
+      <td><%= mission.name %></td>
+      <td><%= mission.description %></td>
+      <td><%= mission.start %></td>
+      <td><%= mission.end %></td>
+      <td><%= link_to "編輯", edit_mission_path(mission) %></td>
+      <td><%= link_to "刪除", mission_path(mission) , method: "delete" , data: {confirm: "確認刪除?"} %></td>
+    </tr>
+    <% end %>
+    <br/>
+  </tbody>
+</table>

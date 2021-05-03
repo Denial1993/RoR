@@ -1,0 +1,17 @@
+<%= form_for(mission) do |f| %>
+  <%= f.label :name , "任務名稱" %>
+  <%= f.text_field :name %><br/>
+
+  <%= f.label :description , "任務內容" %>
+  <%= f.text_area :description %><br/>
+
+  <%= f.label :start , "開始時間" %>
+  <%= f.datetime_field :start %><br/>
+
+  <%= f.label :end , "結束時間" %>
+  <%= f.datetime_field :end %><br/>
+
+  <%= f.submit %>
+<% end %>
+
+<!--這個技巧在 Rails 稱之局部渲染（Partial Render）-->
