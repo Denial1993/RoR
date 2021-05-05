@@ -1,0 +1,8 @@
+<h1>新增任務</h1>
+<p>Find me in app/views/missions/new.html.erb</p>
+
+<!--#原本的code轉移到_form.html.erb , 做板模重複使用-->
+<%= render "form", mission: @mission %>
+
+<%=  link_to "返回主畫面" , missions_path %>
+  
