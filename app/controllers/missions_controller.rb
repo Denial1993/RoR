@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
   def index
-    @missions = Mission.all 
+    @missions = Mission.all.reverse_order
   end
 
   def new
@@ -46,6 +46,6 @@ class MissionsController < ApplicationController
   
   private
   def mission_params
-    params.require(:mission).permit(:name, :description, :start, :end)
+    params.require(:mission).permit( :name, :description, :start, :end)
   end
 end
