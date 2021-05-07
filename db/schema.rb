@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_081331) do
+ActiveRecord::Schema.define(version: 2021_05_07_064711) do
 
   create_table "mission_owners", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_04_30_081331) do
     t.datetime "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sequence", default: "中"
+    t.string "status", default: "待處理"
   end
 
   create_table "users", force: :cascade do |t|
