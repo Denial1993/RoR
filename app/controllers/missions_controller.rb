@@ -1,6 +1,6 @@
 class MissionsController < ApplicationController
   def index
-    @missions = Mission.all 
+    @missions = Mission.all.reverse_order
   end
 
   def new
@@ -9,11 +9,17 @@ class MissionsController < ApplicationController
 
   def create
     @mission = Mission.new(mission_params)
-      if @mission.save
+    
+    if  @mission.valid?
+      if @mission.save 
         redirect_to missions_path,notice: "新增成功"
       else
         render :new
       end
+    else
+      flash[:notice] = @mission.errors.full_messages
+      render :new 
+    end
   end
 
   def show
@@ -28,7 +34,7 @@ class MissionsController < ApplicationController
     @mission = Mission.find_by(id: params[:id])
     #這邊有新增原本資料庫內沒有的新版資料,所以要用mission_params 過濾資訊
     if @mission.update(mission_params)
-      redirect_to missions_path ,notice: "資料更新成功!"
+        redirect_to missions_path ,notice: "資料更新成功!"
     else
       render :edit
     end
@@ -46,6 +52,6 @@ class MissionsController < ApplicationController
   
   private
   def mission_params
-    params.require(:mission).permit(:name, :description, :start, :end)
+    params.require(:mission).permit( :name, :description, :start, :end ,:sequence ,:status)
   end
 end

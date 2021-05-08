@@ -27,3 +27,28 @@ ActiveRecord::Schema.define(version: 2021_04_30_081331) do
   end
 
 end
+
+
+步驟13: 網站佈署
+  將佈署的方法寫進 README.md
+    1.gemfile 加入一個
+      group:production do
+        gem "pg"
+      end
+    2.安裝HEROKU
+    3.註冊HEROKU
+    4.在終端機: 登入 $heroku login
+      然後創一個新的 heroku create (專案名稱)
+    5.$git add.
+      $git commit
+      $git push heroku master
+      遇到問題:
+        error: src refspec master does not match any
+        error: failed to push some refs to 'https://git.heroku.com/ror-interview-mission.git'
+    6.
+
+    n.就完成布署了。
+    
+    
+  也將使用的 framework 版號等資料記下來
+  
