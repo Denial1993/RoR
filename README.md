@@ -42,7 +42,12 @@ end
     5.$git add.
       $git commit
       $git push heroku master
-    6.就完成布署了。
+      遇到問題:
+        error: src refspec master does not match any
+        error: failed to push some refs to 'https://git.heroku.com/ror-interview-mission.git'
+    6.
+
+    n.就完成布署了。
     
     
   也將使用的 framework 版號等資料記下來
