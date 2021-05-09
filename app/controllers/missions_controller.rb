@@ -1,8 +1,12 @@
 class MissionsController < ApplicationController
+#  def index
+#    @missions = Mission.all.reverse_order
+#  end
   def index
-    @missions = Mission.all.reverse_order
+    @m = Mission.ransack(params[:q])
+    @missions = @m.result
   end
-
+  
   def new
     @mission = Mission.new
   end
