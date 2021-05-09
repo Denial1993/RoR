@@ -45,10 +45,16 @@ end
       遇到問題:
         error: src refspec master does not match any
         error: failed to push some refs to 'https://git.heroku.com/ror-interview-mission.git'
-    6.
-
-    n.就完成布署了。
+    6.用github 跟 heroku 連接
+    7.把github上的分支topic, merge回去 main分支
+    8.Heroku 自動同步github的main分支
+    9.終端機 $heroku run rails db:migrate
+    10.成功部屬上去。
     
     
   也將使用的 framework 版號等資料記下來
+    heroku: heroku/7.52.0 linux-x64 node-v12.21.0
+    rails: Rails 5.2.5
+    ruby : ruby 2.7.2
+
   
