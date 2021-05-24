@@ -14,13 +14,13 @@
   <% end %><p/>
   
   <thead>
+      <% @m = Mission.ransack(params[:q]) %>
     <tr>
       <td>任務名稱</td>
       <td>任務內容</td>
       <td>開始時間</td>
-      <% @m = Mission.ransack(params[:q]) %>
       <td><%= sort_link(@m, :end, '結束時間', default_order: :desc) %></td>
-      <td>優先順序</td>
+      <td><%= sort_link(@m, :sequence, '優先順序', default_order: :desc) %></td>
       <td>狀態</td>
       <td>編輯</td>
       <td>刪除</td>
@@ -42,4 +42,6 @@
     <% end %>
     <br/>
   </tbody>
+  
+  <tfoot><%= paginate @missions %></tfoot>
 </table>
