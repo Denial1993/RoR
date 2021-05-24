@@ -7,14 +7,17 @@ class Mission < ApplicationRecord
 #  validates_presence_of :name, :login, :email
   
   #將沒有內文(描述)的檔案給撈出來
-  def self.no_description
-    where(description: nil)
-  end
-  #這裡指的是摘要;大綱 不是指抽象。
-  def abstract
-    self.description[0..20]
-  end
+#  def self.no_description
+#    where(description: nil)
+#  end
+#  #這裡指的是摘要;大綱 不是指抽象。
+#  def abstract
+#    self.description[0..20]
+#  end
+#  
   
+  
+  belongs_to :user
 end
 
 

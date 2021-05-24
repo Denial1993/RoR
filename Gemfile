@@ -97,3 +97,10 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 #Bootstrap JavaScript depends on jQuery. If you're using Rails 5.1+, add the jquery-rails gem to your Gemfile:
 gem 'jquery-rails'
+
+
+
+
+
+#Rails預設的語系是英文。要換成繁體中文，可以安裝rails-i18n這個gem有社群幫忙翻譯的繁體中文：
+gem "rails-i18n"

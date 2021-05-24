@@ -18,7 +18,6 @@
     <tr>
       <td>任務名稱</td>
       <td>任務內容</td>
-      <td>開始時間</td>
       <td><%= sort_link(@m, :end, '結束時間', default_order: :desc) %></td>
       <td><%= sort_link(@m, :sequence, '優先順序', default_order: :desc) %></td>
       <td>狀態</td>
@@ -32,7 +31,6 @@
     <tr>
       <td><%= mission.name %></td>
       <td><%= mission.description %></td>
-      <td><%= mission.start %></td>
       <td><%= mission.end %></td>
       <td><%= mission.sequence %></td>
       <td><%= mission.status %></td>

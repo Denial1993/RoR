@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_064711) do
+ActiveRecord::Schema.define(version: 2021_05_24_120533) do
 
   create_table "mission_owners", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 2021_05_07_064711) do
   create_table "missions", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "start"
     t.datetime "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sequence", default: "中"
     t.string "status", default: "待處理"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
