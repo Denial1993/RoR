@@ -3,7 +3,7 @@ class MissionsController < ApplicationController
 #    @missions = Mission.all.reverse_order
 #  end
   def index
-    @m = Mission.ransack(params[:q])
+    @m = Mission.page(params[:page]).per(10) .ransack(params[:q])
     @missions = @m.result
   end
   
