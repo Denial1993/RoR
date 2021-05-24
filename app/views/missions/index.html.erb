@@ -4,6 +4,15 @@
 <h3><%= link_to "新增" , new_mission_path %></h3>
 
 <table>
+  <searchbar>搜尋</searchbar><br/>
+  <%= search_form_for @m do |f| %>
+    <%= f.label :任務名稱 %>
+    <%= f.search_field :name_cont %><p/>
+    <%= f.label :狀態 %>
+    <%= f.search_field :status_cont %>
+    <%= f.submit %>
+  <% end %><p/>
+  
   <thead>
     <tr>
       <td>任務名稱</td>
